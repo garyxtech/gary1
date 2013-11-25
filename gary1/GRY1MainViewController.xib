@@ -14,27 +14,20 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w22-2g-kKi">
-                    <rect key="frame" x="0.0" y="519" width="320" height="49"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <items>
-                        <tabBarItem title="记录" image="baby.png" id="fEX-rc-aI7"/>
-                        <tabBarItem title="历史" image="history.png" id="nuE-TO-Prn"/>
-                        <tabBarItem title="分析" image="analysis.png" id="WRA-Gv-21y"/>
-                        <tabBarItem title="设定" image="settings.png" id="cAv-7f-5Kr"/>
-                    </items>
-                </tabBar>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8XM-st-k3x">
+                    <rect key="frame" x="74" y="92" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="喂奶">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onBtnBreedClick:" destination="-1" eventType="touchUpInside" id="y8T-Hg-doL"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
-    <resources>
-        <image name="analysis.png" width="30" height="30"/>
-        <image name="baby.png" width="30" height="30"/>
-        <image name="history.png" width="30" height="30"/>
-        <image name="settings.png" width="30" height="30"/>
-    </resources>
 </document>

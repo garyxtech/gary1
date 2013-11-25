@@ -18,7 +18,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        myBaby = [[GRY1Baby alloc] init];
+        breedController = [[GRY1BreedViewController alloc] init];
+        breedController.delegate = self;
     }
     return self;
 }
@@ -33,6 +35,23 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction) onBtnBreedClick:(id)sender{
+    [self presentViewController:breedController animated:true completion:nil];
+    [breedController loadStateForLastBreedTime:myBaby.state withLastBreedTime:nil];
+}
+
+-(void) didConfirmStartBreed:(GRY1BreedViewController *)controller{
+    myBaby.state = GRY1BabyStateEnum_IN_BREED;
+}
+
+-(void) didConfirmLastBreedDuration:(GRY1BreedViewController *)controller lastBreedDuration:(NSDate *)duration{
+    myBaby.state = GRY1BabyStateEnum_IDLE;
+}
+
+-(void) didCancelBreedLog:(GRY1BreedViewController *)controller{
+    
 }
 
 @end

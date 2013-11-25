@@ -7,6 +7,7 @@
 //
 
 #import "GRY1AppDelegate.h"
+#import "GRY1MainViewController.h"
 
 @implementation GRY1AppDelegate
 
@@ -14,10 +15,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    GRY1MainViewController *mainController = [[GRY1MainViewController alloc] init];
+    [self.window setRootViewController:mainController];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    self.mainController = [[GRY1MainViewController alloc] init];
-    [self.window setRootViewController:self.mainController];
     return YES;
 }
 

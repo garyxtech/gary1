@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GRY1BreedViewController.h"
 
-@interface GRY1MainViewController : UIViewController
-
+@interface GRY1MainViewController : UIViewController<GRY1BreedViewControllerDelegate>
+{
+    GRY1BreedViewController *breedController;
+    IBOutlet UIButton *btnBreed;
+    
+    GRY1Baby *myBaby;
+}
+-(IBAction) onBtnBreedClick:(id)sender;
 @end
