@@ -16,6 +16,12 @@
 		1641D6A518424880004EACBC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1641D6A418424880004EACBC /* Default.png */; };
 		1641D6A718424880004EACBC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1641D6A618424880004EACBC /* Default@2x.png */; };
 		1641D6A918424880004EACBC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1641D6A818424880004EACBC /* Default-568h@2x.png */; };
+		16F3A0A1184371CF00A298EE /* GRY1MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F3A09F184371CF00A298EE /* GRY1MainViewController.m */; };
+		16F3A0A2184371CF00A298EE /* GRY1MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16F3A0A0184371CF00A298EE /* GRY1MainViewController.xib */; };
+		16F3A0B118437B5400A298EE /* analysis.png in Resources */ = {isa = PBXBuildFile; fileRef = 16F3A0B018437B5400A298EE /* analysis.png */; };
+		16F3A0B318437B6C00A298EE /* baby.png in Resources */ = {isa = PBXBuildFile; fileRef = 16F3A0B218437B6C00A298EE /* baby.png */; };
+		16F3A0B518437C8E00A298EE /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 16F3A0B418437C8E00A298EE /* settings.png */; };
+		16F3A0B718437D4400A298EE /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = 16F3A0B618437D4400A298EE /* history.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +38,13 @@
 		1641D6A418424880004EACBC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1641D6A618424880004EACBC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1641D6A818424880004EACBC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		16F3A09E184371CF00A298EE /* GRY1MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRY1MainViewController.h; sourceTree = "<group>"; };
+		16F3A09F184371CF00A298EE /* GRY1MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRY1MainViewController.m; sourceTree = "<group>"; };
+		16F3A0A0184371CF00A298EE /* GRY1MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRY1MainViewController.xib; sourceTree = "<group>"; };
+		16F3A0B018437B5400A298EE /* analysis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = analysis.png; sourceTree = "<group>"; };
+		16F3A0B218437B6C00A298EE /* baby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baby.png; sourceTree = "<group>"; };
+		16F3A0B418437C8E00A298EE /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		16F3A0B618437D4400A298EE /* history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = history.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +91,13 @@
 		1641D69818424880004EACBC /* gary1 */ = {
 			isa = PBXGroup;
 			children = (
+				16F3A0A5184375C500A298EE /* Images */,
 				1641D6A118424880004EACBC /* GRY1AppDelegate.h */,
 				1641D6A218424880004EACBC /* GRY1AppDelegate.m */,
 				1641D69918424880004EACBC /* Supporting Files */,
+				16F3A09E184371CF00A298EE /* GRY1MainViewController.h */,
+				16F3A09F184371CF00A298EE /* GRY1MainViewController.m */,
+				16F3A0A0184371CF00A298EE /* GRY1MainViewController.xib */,
 			);
 			path = gary1;
 			sourceTree = "<group>";
@@ -97,6 +114,17 @@
 				1641D6A818424880004EACBC /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		16F3A0A5184375C500A298EE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				16F3A0B618437D4400A298EE /* history.png */,
+				16F3A0B418437C8E00A298EE /* settings.png */,
+				16F3A0B218437B6C00A298EE /* baby.png */,
+				16F3A0B018437B5400A298EE /* analysis.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,9 +179,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16F3A0B718437D4400A298EE /* history.png in Resources */,
+				16F3A0B518437C8E00A298EE /* settings.png in Resources */,
+				16F3A0A2184371CF00A298EE /* GRY1MainViewController.xib in Resources */,
 				1641D69D18424880004EACBC /* InfoPlist.strings in Resources */,
 				1641D6A518424880004EACBC /* Default.png in Resources */,
+				16F3A0B118437B5400A298EE /* analysis.png in Resources */,
 				1641D6A718424880004EACBC /* Default@2x.png in Resources */,
+				16F3A0B318437B6C00A298EE /* baby.png in Resources */,
 				1641D6A918424880004EACBC /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16F3A0A1184371CF00A298EE /* GRY1MainViewController.m in Sources */,
 				1641D69F18424880004EACBC /* main.m in Sources */,
 				1641D6A318424880004EACBC /* GRY1AppDelegate.m in Sources */,
 			);
@@ -243,9 +277,11 @@
 		1641D6AD18424880004EACBC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "gary1/gary1-Prefix.pch";
 				INFOPLIST_FILE = "gary1/gary1-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -254,9 +290,11 @@
 		1641D6AE18424880004EACBC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "gary1/gary1-Prefix.pch";
 				INFOPLIST_FILE = "gary1/gary1-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -281,6 +319,7 @@
 				1641D6AE18424880004EACBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

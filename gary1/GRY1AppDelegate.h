@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GRY1MainViewController.h"
 
 @interface GRY1AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) GRY1MainViewController *mainController;
 
 @end
