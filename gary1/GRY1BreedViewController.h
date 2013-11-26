@@ -22,6 +22,7 @@
 {
     GRY1BabyStateEnum state;
     
+    IBOutlet UILabel *lblCurrentTimePrompt;
     IBOutlet UILabel *lblCurrentTime;
     
     IBOutlet UIButton *btnStartBreed;
@@ -32,6 +33,10 @@
     IBOutlet UIButton *btnSetLastBreedDuration;
     
     IBOutlet UIButton *btnCancel;
+    
+    IBOutlet UIView *vwDatePick;
+    IBOutlet UIDatePicker *pckDate;
+    IBOutlet UIButton *btnDatePick;
 }
 
 @property (nonatomic, weak) id <GRY1BreedViewControllerDelegate> delegate;
@@ -40,6 +45,11 @@
 -(IBAction)btnCancelClick:(id)sender;
 -(IBAction)btnEndBreedClick:(id)sender;
 
+-(IBAction)btnSetLastBreedTimeClick:(id)sender;
+-(IBAction)btnSetLastBreedDurationClick:(id)sender;
+
 -(void) loadStateForLastBreedTime:(GRY1BabyStateEnum) newState withLastBreedTime: (NSDate*) from;
+
+-(IBAction)btnDatePickClick:(id)sender;
 
 @end

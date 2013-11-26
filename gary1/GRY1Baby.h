@@ -27,5 +27,6 @@ typedef NS_ENUM(NSInteger, GRY1BabyStateEnum) {
 -(void) startBreed: (NSDate*) startTime;
 -(void) endBreedByEndTime: (NSDate*) endTime;
 -(void) endBreedByDuraiton: (NSTimeInterval) duration;
+-(NSDate*) getLastBreedStartTime;
 
 @end

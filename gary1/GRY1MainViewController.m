@@ -43,11 +43,12 @@
 }
 
 -(IBAction) onBtnBreedClick:(id)sender{
+    NSDate *lastBreedTime = [_myBaby getLastBreedStartTime];
     NSLog(@"Breed button clicked");
     [self presentViewController:breedController animated:true completion:nil];
     NSLog(@"Breed controller presented, loading state...");
-    [breedController loadStateForLastBreedTime: [_myBaby getState] withLastBreedTime:nil];
-    NSLog(@"State loaded as %d and start time is %@", [_myBaby getState], nil);
+    [breedController loadStateForLastBreedTime: [_myBaby getState] withLastBreedTime:lastBreedTime];
+    NSLog(@"State loaded as %d and start time is %@", [_myBaby getState], lastBreedTime);
 }
 
 -(void) didConfirmStartBreed:(GRY1BreedViewController *)controller{
@@ -56,7 +57,7 @@
 }
 
 -(void) didConfirmLastBreedDuration:(GRY1BreedViewController *)controller lastBreedDuration:(NSTimeInterval) duration{
-    NSLog(@"confirm of end breed by duration: %f", duration);
+    NSLog(@"==> confirm of end breed by duration: %f", duration);
     [_myBaby endBreedByDuraiton:duration];
 }
 

@@ -84,4 +84,17 @@
     return nil;
 }
 
+-(NSDate *)getLastBreedStartTime{
+    GRY1Action *lastBreed = [self _getLastActionByType:GRY1ActionEnum_BREED];
+    if(lastBreed){
+        if(lastBreed.getEndTime!=nil){
+            return nil;
+        }else{
+            return lastBreed.getFromTime;
+        }
+    }else{
+        return nil;
+    }
+}
+
 @end

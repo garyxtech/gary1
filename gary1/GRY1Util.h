@@ -15,4 +15,6 @@
 
 +(NSString* ) dateToStr: (NSDate*) date;
 
++(NSTimeInterval) getSeconds: (NSDate*) date;
+
 @end

@@ -22,4 +22,11 @@ static const NSDateFormatter* DATEFORMATTER;
     return [DATEFORMATTER stringFromDate:date];
 }
 
++(NSTimeInterval)getSeconds:(NSDate *)date{
+    unsigned unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    NSDateComponents *comp = [cal components:unitFlags fromDate:date];
+    return comp.hour * 60 * 60 + comp.minute * 60 + comp.second;
+}
+
 @end
