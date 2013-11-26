@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [tblActionLog reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,17 +41,17 @@
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
--(void)loadRecentActions:(NSArray *)actions{
-    _recentActions = actions;
+-(void) setBaby: (GRY1Baby*) baby{
+    _baby = baby;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return [_baby getRecentActionGroupCount];
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [_recentActions count];
+    return [_baby getActionCountForGroupIdx:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -60,7 +60,7 @@
     if(cell==nil){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_ID];
     }
-    GRY1Action *action = [_recentActions firstObject];
+    GRY1Action *action = [_baby getActionForIdx:indexPath.row forGroupIdx:indexPath.section];
     if(action){
         [cell.textLabel setText:[action getDipslay]];
     }else{
@@ -70,6 +70,9 @@
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return [_baby getGroupTitleForIdx:section];
+}
 
 
 

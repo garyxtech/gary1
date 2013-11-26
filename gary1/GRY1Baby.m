@@ -15,6 +15,7 @@
     if(self){
         NSLog(@"Initing new baby");
         _recentActions = [[NSMutableArray alloc] init];
+        _groupForDay = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -38,6 +39,8 @@
     
     _state = GRY1BabyStateEnum_IN_BREED;
     
+    [self _updateDayGroup];
+    
 }
 
 -(void) endBreedByEndTime:(NSDate *)endTime{
@@ -53,16 +56,18 @@
     
     _state = GRY1BabyStateEnum_IDLE;
     
+    [self _updateDayGroup];
+    
 }
 
 -(void) endBreedByDuraiton:(NSTimeInterval) duration{
-
+    
     NSLog(@"Baby end breed by duration");
     GRY1Action *lastBreed = [self _getLastActionByType:GRY1ActionEnum_BREED];
     NSLog(@"Found last breed action is %@", lastBreed);
     assert(lastBreed);
     assert([lastBreed isInProgress]);
-
+    
     NSDate* from = [lastBreed getFromTime];
     NSLog(@"Last from is %@", from);
     NSDate* to = [from dateByAddingTimeInterval:duration];
@@ -71,6 +76,23 @@
     [lastBreed finish:to];
     
     _state = GRY1BabyStateEnum_IDLE;
+    
+    [self _updateDayGroup];
+    
+}
+
+-(void) _updateDayGroup{
+    [_groupForDay removeAllObjects];
+    for(GRY1Action *currAction in _recentActions){
+        NSDate *dateDay = [GRY1Util stripTime:currAction.getCompareTime];
+        if([_groupForDay containsObject:dateDay]){
+            ;
+        }else{
+            if(dateDay){
+                [_groupForDay addObject:dateDay];
+            }
+        }
+    }
 }
 
 -(GRY1Action *) _getLastActionByType: (GRY1ActionEnum) type{
@@ -99,6 +121,52 @@
 
 -(NSArray *)getRecentActions{
     return _recentActions;
+}
+
+-(NSInteger)getRecentActionGroupCount{
+    return [_groupForDay count];
+}
+
+-(NSString *)getGroupTitleForIdx:(NSInteger)groupIdx{
+    if(groupIdx >= [_groupForDay count]){
+        return @"[未知]";
+    }else{
+        NSDate *compareTime = [_groupForDay objectAtIndex:groupIdx];
+        return [GRY1Util dateToStr:compareTime];
+    }
+}
+
+-(NSInteger) getActionCountForGroupIdx: (NSInteger) groupIdx{
+    return [[_recentActions filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        GRY1Action *action = (GRY1Action*) evaluatedObject;
+        NSDate *compareTime = [action getCompareTime];
+        compareTime = [GRY1Util stripTime:compareTime];
+        NSUInteger idx = [_groupForDay indexOfObject:compareTime];
+        if(idx==groupIdx){
+            return true;
+        }else{
+            return false;
+        }
+    }]] count];
+}
+
+-(GRY1Action *) getActionForIdx: (NSInteger) actionIdx forGroupIdx:(NSInteger) groupIdx{
+    NSArray *filterActions = [_recentActions filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        GRY1Action *action = (GRY1Action*) evaluatedObject;
+        NSDate *compareTime = [action getCompareTime];
+        compareTime = [GRY1Util stripTime:compareTime];        
+        NSUInteger idx = [_groupForDay indexOfObject:compareTime];
+        if(idx==groupIdx){
+            return true;
+        }else{
+            return false;
+        }
+    }]];
+    if(actionIdx >= [filterActions count]){
+        return nil;
+    }else{
+        return [filterActions objectAtIndex:actionIdx];
+    }
 }
 
 @end

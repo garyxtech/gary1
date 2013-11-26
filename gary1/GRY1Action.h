@@ -26,6 +26,8 @@ typedef NS_ENUM(NSInteger, GRY1ActionEnum) {
 
 -(NSDate *) getEndTime;
 
+-(NSDate *) getCompareTime;
+
 -(id) init: (GRY1ActionEnum) type from: (NSDate*) from to:(NSDate*) to;
 
 -(void) start:(NSDate*) from;

@@ -29,6 +29,14 @@
     return _to;
 }
 
+-(NSDate *)getCompareTime{
+    if(_to){
+        return _to;
+    }else{
+        return _from;
+    }
+}
+
 -(void) start:(NSDate *)from{
     NSLog(@"Start action from: %@", from);
     _from = from;

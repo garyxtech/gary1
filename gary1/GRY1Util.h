@@ -17,4 +17,6 @@
 
 +(NSTimeInterval) getSeconds: (NSDate*) date;
 
++(NSDate*) stripTime: (NSDate*) date;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class GRY1Action;
 
 typedef NS_ENUM(NSInteger, GRY1BabyStateEnum) {
     GRY1BabyStateEnum_IDLE=0,
@@ -19,6 +20,7 @@ typedef NS_ENUM(NSInteger, GRY1BabyStateEnum) {
 {
     NSMutableArray *_recentActions;
     GRY1BabyStateEnum _state;
+    NSMutableArray *_groupForDay;
 }
 
 
@@ -29,5 +31,10 @@ typedef NS_ENUM(NSInteger, GRY1BabyStateEnum) {
 -(void) endBreedByDuraiton: (NSTimeInterval) duration;
 -(NSDate*) getLastBreedStartTime;
 -(NSArray*) getRecentActions;
+
+-(NSInteger) getRecentActionGroupCount;
+-(NSString*) getGroupTitleForIdx: (NSInteger) groupIdx;
+-(NSInteger) getActionCountForGroupIdx: (NSInteger) groupIdx;
+-(GRY1Action *) getActionForIdx: (NSInteger) actionIdx forGroupIdx:(NSInteger) groupIdx;
 
 @end

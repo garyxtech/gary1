@@ -29,4 +29,15 @@ static const NSDateFormatter* DATEFORMATTER;
     return comp.hour * 60 * 60 + comp.minute * 60 + comp.second;
 }
 
++(NSDate *)stripTime:(NSDate *)date{
+    if(date==nil) {
+        return nil;
+    }
+    unsigned int flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* components = [calendar components:flags fromDate:date];
+    NSDate* dateOnly = [calendar dateFromComponents:components];
+    return dateOnly;
+}
+
 @end

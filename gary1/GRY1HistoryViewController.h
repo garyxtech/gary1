@@ -21,13 +21,13 @@
     IBOutlet UITableView *tblActionLog;
     IBOutlet UIButton *btnBack;
     
-    NSArray* _recentActions;
+    GRY1Baby *_baby;
 }
 
 @property (nonatomic, weak) id <GRY1HistoryViewControllerDelegate> delegate;
 
 -(IBAction)btnBackClick:(id)sender;
 
--(void) loadRecentActions: (NSArray*) actions;
+-(void) setBaby: (GRY1Baby*) baby;
 
 @end
