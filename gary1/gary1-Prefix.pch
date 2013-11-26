@@ -13,5 +13,8 @@
     #import <Foundation/Foundation.h>
 #endif
 
+#include <assert.h>
+
+#import "GRY1Util.h"
 #import "GRY1Baby.h"
 #import "GRY1Action.h"

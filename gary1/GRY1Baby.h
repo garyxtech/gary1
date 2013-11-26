@@ -17,6 +17,15 @@ typedef NS_ENUM(NSInteger, GRY1BabyStateEnum) {
 
 @interface GRY1Baby : NSObject
 {
+    NSMutableArray *_recentActions;
+    GRY1BabyStateEnum _state;
 }
-@property GRY1BabyStateEnum state;
+
+
+-(GRY1BabyStateEnum) getState;
+
+-(void) startBreed: (NSDate*) startTime;
+-(void) endBreedByEndTime: (NSDate*) endTime;
+-(void) endBreedByDuraiton: (NSTimeInterval) duration;
+
 @end

@@ -16,6 +16,7 @@
 		1641D6A518424880004EACBC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1641D6A418424880004EACBC /* Default.png */; };
 		1641D6A718424880004EACBC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1641D6A618424880004EACBC /* Default@2x.png */; };
 		1641D6A918424880004EACBC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1641D6A818424880004EACBC /* Default-568h@2x.png */; };
+		169204601844C28C006C10C5 /* GRY1Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 1692045F1844C28C006C10C5 /* GRY1Util.m */; };
 		16EC94431843952D00C6D3DB /* GRY1MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EC94411843952D00C6D3DB /* GRY1MainViewController.m */; };
 		16EC94441843952D00C6D3DB /* GRY1MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EC94421843952D00C6D3DB /* GRY1MainViewController.xib */; };
 		16EC9449184399C900C6D3DB /* GRY1BreedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EC9447184399C900C6D3DB /* GRY1BreedViewController.m */; };
@@ -42,6 +43,8 @@
 		1641D6A418424880004EACBC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1641D6A618424880004EACBC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1641D6A818424880004EACBC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1692045E1844C28C006C10C5 /* GRY1Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRY1Util.h; sourceTree = "<group>"; };
+		1692045F1844C28C006C10C5 /* GRY1Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRY1Util.m; sourceTree = "<group>"; };
 		16EC94401843952D00C6D3DB /* GRY1MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRY1MainViewController.h; sourceTree = "<group>"; };
 		16EC94411843952D00C6D3DB /* GRY1MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRY1MainViewController.m; sourceTree = "<group>"; };
 		16EC94421843952D00C6D3DB /* GRY1MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRY1MainViewController.xib; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 		1641D69818424880004EACBC /* gary1 */ = {
 			isa = PBXGroup;
 			children = (
+				1692045D1844C27D006C10C5 /* Util */,
 				16EC944B18439DE900C6D3DB /* Models */,
 				16EC94351843870900C6D3DB /* ViewControllers */,
 				16F3A0A5184375C500A298EE /* Images */,
@@ -124,6 +128,15 @@
 				1641D6A818424880004EACBC /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1692045D1844C27D006C10C5 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				1692045E1844C28C006C10C5 /* GRY1Util.h */,
+				1692045F1844C28C006C10C5 /* GRY1Util.m */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		16EC94351843870900C6D3DB /* ViewControllers */ = {
@@ -247,6 +260,7 @@
 				1641D69F18424880004EACBC /* main.m in Sources */,
 				1641D6A318424880004EACBC /* GRY1AppDelegate.m in Sources */,
 				16EC944E18439E1600C6D3DB /* GRY1Baby.m in Sources */,
+				169204601844C28C006C10C5 /* GRY1Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

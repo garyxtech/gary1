@@ -13,7 +13,7 @@
 @protocol GRY1BreedViewControllerDelegate <NSObject>
 
 -(void) didConfirmStartBreed: (GRY1BreedViewController*) controller;
--(void) didConfirmLastBreedDuration: (GRY1BreedViewController*) controller lastBreedDuration:(NSDate*) duration;
+-(void) didConfirmLastBreedDuration: (GRY1BreedViewController*) controller lastBreedDuration:(NSTimeInterval) duration;
 -(void) didCancelBreedLog: (GRY1BreedViewController*) controller;
 
 @end
@@ -21,6 +21,8 @@
 @interface GRY1BreedViewController : UIViewController
 {
     GRY1BabyStateEnum state;
+    
+    IBOutlet UILabel *lblCurrentTime;
     
     IBOutlet UIButton *btnStartBreed;
     IBOutlet UIButton *btnEndBreed;

@@ -14,7 +14,7 @@
     GRY1BreedViewController *breedController;
     IBOutlet UIButton *btnBreed;
     
-    GRY1Baby *myBaby;
+    GRY1Baby * _myBaby;
 }
 -(IBAction) onBtnBreedClick:(id)sender;
 @end

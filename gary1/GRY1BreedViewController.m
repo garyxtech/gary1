@@ -47,7 +47,7 @@
 }
 
 -(IBAction)btnEndBreedClick:(id)sender{
-    [self.delegate didConfirmLastBreedDuration:self lastBreedDuration:nil];
+    [self.delegate didConfirmLastBreedDuration:self lastBreedDuration:0];
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
@@ -60,6 +60,7 @@
         btnStartBreed.hidden=false;
         vwStopBreed.hidden=true;
     }
+    [lblCurrentTime setText:[GRY1Util dateToStr:[NSDate date]]];
 }
 
 @end

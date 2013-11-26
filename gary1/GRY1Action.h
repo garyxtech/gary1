@@ -16,8 +16,24 @@ typedef NS_ENUM(NSInteger, GRY1ActionEnum) {
     GRY1ActionEnum_DISPOSE
 };
 
-@interface GRY1Action : NSObject
-@property GRY1ActionEnum actionType;
-@property NSDate *from;
-@property NSDate *to;
+@interface GRY1Action : NSObject{
+    GRY1ActionEnum _actionType;
+    NSDate *_from;
+    NSDate *_to;
+}
+
+-(NSDate *) getFromTime;
+
+-(NSDate *) getEndTime;
+
+-(id) init: (GRY1ActionEnum) type from: (NSDate*) from to:(NSDate*) to;
+
+-(void) start:(NSDate*) from;
+
+-(void) finish:(NSDate*) to;
+
+-(BOOL) isOfType: (GRY1ActionEnum) type;
+
+-(BOOL) isInProgress;
+
 @end

@@ -15,8 +15,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    NSLog(@"Custom Application start, creating main view controller");
     GRY1MainViewController *mainController = [[GRY1MainViewController alloc] init];
+    NSLog(@"Main controller created");
     [self.window setRootViewController:mainController];
+    NSLog(@"Root set");
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

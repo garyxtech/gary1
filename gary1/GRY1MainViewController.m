@@ -18,9 +18,14 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        myBaby = [[GRY1Baby alloc] init];
+        NSLog(@"Custom init for gry1 main controller");
+        NSLog(@"Creating my baby");
+        _myBaby = [[GRY1Baby alloc] init];
+        NSLog(@"Baby created");
+        NSLog(@"Creating breed controller");
         breedController = [[GRY1BreedViewController alloc] init];
         breedController.delegate = self;
+        NSLog(@"Breed controller created");
     }
     return self;
 }
@@ -38,16 +43,21 @@
 }
 
 -(IBAction) onBtnBreedClick:(id)sender{
+    NSLog(@"Breed button clicked");
     [self presentViewController:breedController animated:true completion:nil];
-    [breedController loadStateForLastBreedTime:myBaby.state withLastBreedTime:nil];
+    NSLog(@"Breed controller presented, loading state...");
+    [breedController loadStateForLastBreedTime: [_myBaby getState] withLastBreedTime:nil];
+    NSLog(@"State loaded as %d and start time is %@", [_myBaby getState], nil);
 }
 
 -(void) didConfirmStartBreed:(GRY1BreedViewController *)controller{
-    myBaby.state = GRY1BabyStateEnum_IN_BREED;
+    NSLog(@"Confirm of start breed now");
+    [_myBaby startBreed:[NSDate date]];
 }
 
--(void) didConfirmLastBreedDuration:(GRY1BreedViewController *)controller lastBreedDuration:(NSDate *)duration{
-    myBaby.state = GRY1BabyStateEnum_IDLE;
+-(void) didConfirmLastBreedDuration:(GRY1BreedViewController *)controller lastBreedDuration:(NSTimeInterval) duration{
+    NSLog(@"confirm of end breed by duration: %f", duration);
+    [_myBaby endBreedByDuraiton:duration];
 }
 
 -(void) didCancelBreedLog:(GRY1BreedViewController *)controller{
