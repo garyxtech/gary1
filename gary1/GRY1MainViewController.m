@@ -54,6 +54,7 @@
 }
 
 -(void)onBtnHistoryClick:(id)sender{
+    [historyController loadRecentActions:[_myBaby getRecentActions]];
     [self presentViewController:historyController animated:true completion:nil];
 }
 

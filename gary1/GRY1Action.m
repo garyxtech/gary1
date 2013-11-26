@@ -47,4 +47,19 @@
     return _from != nil && _to == nil;
 }
 
+-(NSString *)getDipslay{
+    switch (_actionType) {
+        case GRY1ActionEnum_BREED:
+            return @"喂奶";
+        case GRY1ActionEnum_DISPOSE:
+            return @"臭臭";
+        case GRY1ActionEnum_SLEEP:
+            return @"呼呼";
+        case GRY1ActionEnum_PLAY:
+            return @"玩耍";
+        default:
+            return @"";
+    }
+}
+
 @end

@@ -36,4 +36,6 @@ typedef NS_ENUM(NSInteger, GRY1ActionEnum) {
 
 -(BOOL) isInProgress;
 
+-(NSString *) getDipslay;
+
 @end

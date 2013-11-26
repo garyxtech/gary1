@@ -97,4 +97,8 @@
     }
 }
 
+-(NSArray *)getRecentActions{
+    return _recentActions;
+}
+
 @end

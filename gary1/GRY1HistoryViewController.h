@@ -16,14 +16,18 @@
 
 @end
 
-@interface GRY1HistoryViewController : UIViewController
+@interface GRY1HistoryViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 {
     IBOutlet UITableView *tblActionLog;
     IBOutlet UIButton *btnBack;
+    
+    NSArray* _recentActions;
 }
 
 @property (nonatomic, weak) id <GRY1HistoryViewControllerDelegate> delegate;
 
 -(IBAction)btnBackClick:(id)sender;
+
+-(void) loadRecentActions: (NSArray*) actions;
 
 @end

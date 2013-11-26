@@ -20,7 +20,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -41,5 +40,37 @@
     [delegate didGoBack:self];
     [self dismissViewControllerAnimated:true completion:nil];
 }
+
+-(void)loadRecentActions:(NSArray *)actions{
+    _recentActions = actions;
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [_recentActions count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *CELL_ID = @"HISTORY_TABLE_CELL_ID";
+    UITableViewCell *cell = [tblActionLog dequeueReusableCellWithIdentifier:CELL_ID];
+    if(cell==nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CELL_ID];
+    }
+    GRY1Action *action = [_recentActions firstObject];
+    if(action){
+        [cell.textLabel setText:[action getDipslay]];
+    }else{
+        [cell.textLabel setText: @"未知"];
+    }
+    
+    return cell;
+}
+
+
+
 
 @end
