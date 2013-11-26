@@ -25,6 +25,8 @@
         NSLog(@"Creating breed controller");
         breedController = [[GRY1BreedViewController alloc] init];
         breedController.delegate = self;
+        historyController = [[GRY1HistoryViewController alloc] init];
+        historyController.delegate = self;
         NSLog(@"Breed controller created");
     }
     return self;
@@ -51,6 +53,10 @@
     NSLog(@"State loaded as %d and start time is %@", [_myBaby getState], lastBreedTime);
 }
 
+-(void)onBtnHistoryClick:(id)sender{
+    [self presentViewController:historyController animated:true completion:nil];
+}
+
 -(void) didConfirmStartBreed:(GRY1BreedViewController *)controller{
     NSLog(@"Confirm of start breed now");
     [_myBaby startBreed:[NSDate date]];
@@ -62,6 +68,10 @@
 }
 
 -(void) didCancelBreedLog:(GRY1BreedViewController *)controller{
+    
+}
+
+-(void)didGoBack:(GRY1HistoryViewController *)controller{
     
 }
 

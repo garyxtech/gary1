@@ -17,6 +17,8 @@
 		1641D6A718424880004EACBC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1641D6A618424880004EACBC /* Default@2x.png */; };
 		1641D6A918424880004EACBC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1641D6A818424880004EACBC /* Default-568h@2x.png */; };
 		169204601844C28C006C10C5 /* GRY1Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 1692045F1844C28C006C10C5 /* GRY1Util.m */; };
+		169204651844E5F5006C10C5 /* GRY1HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 169204631844E5F5006C10C5 /* GRY1HistoryViewController.m */; };
+		169204661844E5F5006C10C5 /* GRY1HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 169204641844E5F5006C10C5 /* GRY1HistoryViewController.xib */; };
 		16EC94431843952D00C6D3DB /* GRY1MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EC94411843952D00C6D3DB /* GRY1MainViewController.m */; };
 		16EC94441843952D00C6D3DB /* GRY1MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EC94421843952D00C6D3DB /* GRY1MainViewController.xib */; };
 		16EC9449184399C900C6D3DB /* GRY1BreedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EC9447184399C900C6D3DB /* GRY1BreedViewController.m */; };
@@ -45,6 +47,9 @@
 		1641D6A818424880004EACBC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1692045E1844C28C006C10C5 /* GRY1Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRY1Util.h; sourceTree = "<group>"; };
 		1692045F1844C28C006C10C5 /* GRY1Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRY1Util.m; sourceTree = "<group>"; };
+		169204621844E5F5006C10C5 /* GRY1HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRY1HistoryViewController.h; sourceTree = "<group>"; };
+		169204631844E5F5006C10C5 /* GRY1HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRY1HistoryViewController.m; sourceTree = "<group>"; };
+		169204641844E5F5006C10C5 /* GRY1HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRY1HistoryViewController.xib; sourceTree = "<group>"; };
 		16EC94401843952D00C6D3DB /* GRY1MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRY1MainViewController.h; sourceTree = "<group>"; };
 		16EC94411843952D00C6D3DB /* GRY1MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRY1MainViewController.m; sourceTree = "<group>"; };
 		16EC94421843952D00C6D3DB /* GRY1MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GRY1MainViewController.xib; sourceTree = "<group>"; };
@@ -139,9 +144,20 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		169204611844E5DE006C10C5 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				169204621844E5F5006C10C5 /* GRY1HistoryViewController.h */,
+				169204631844E5F5006C10C5 /* GRY1HistoryViewController.m */,
+				169204641844E5F5006C10C5 /* GRY1HistoryViewController.xib */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
 		16EC94351843870900C6D3DB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				169204611844E5DE006C10C5 /* History */,
 				16EC9445184399BB00C6D3DB /* Breed */,
 				16EC94401843952D00C6D3DB /* GRY1MainViewController.h */,
 				16EC94411843952D00C6D3DB /* GRY1MainViewController.m */,
@@ -241,6 +257,7 @@
 				1641D6A518424880004EACBC /* Default.png in Resources */,
 				16F3A0B118437B5400A298EE /* analysis.png in Resources */,
 				16EC944A184399C900C6D3DB /* GRY1BreedViewController.xib in Resources */,
+				169204661844E5F5006C10C5 /* GRY1HistoryViewController.xib in Resources */,
 				1641D6A718424880004EACBC /* Default@2x.png in Resources */,
 				16F3A0B318437B6C00A298EE /* baby.png in Resources */,
 				1641D6A918424880004EACBC /* Default-568h@2x.png in Resources */,
@@ -256,6 +273,7 @@
 			files = (
 				16EC94541843A01E00C6D3DB /* GRY1Action.m in Sources */,
 				16EC9449184399C900C6D3DB /* GRY1BreedViewController.m in Sources */,
+				169204651844E5F5006C10C5 /* GRY1HistoryViewController.m in Sources */,
 				16EC94431843952D00C6D3DB /* GRY1MainViewController.m in Sources */,
 				1641D69F18424880004EACBC /* main.m in Sources */,
 				1641D6A318424880004EACBC /* GRY1AppDelegate.m in Sources */,

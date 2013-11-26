@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GRY1MainViewController">
             <connections>
+                <outlet property="btnBreed" destination="8XM-st-k3x" id="mpW-bN-TNL"/>
+                <outlet property="btnHistory" destination="kuj-sh-PJL" id="R9u-lD-uKh"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -22,6 +24,16 @@
                     </state>
                     <connections>
                         <action selector="onBtnBreedClick:" destination="-1" eventType="touchUpInside" id="y8T-Hg-doL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuj-sh-PJL">
+                    <rect key="frame" x="194" y="92" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="历史">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onBtnHistoryClick:" destination="-1" eventType="touchUpInside" id="9Qr-I5-pO6"/>
                     </connections>
                 </button>
             </subviews>

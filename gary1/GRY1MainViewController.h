@@ -8,13 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "GRY1BreedViewController.h"
+#import "GRY1HistoryViewController.h"
 
-@interface GRY1MainViewController : UIViewController<GRY1BreedViewControllerDelegate>
+@interface GRY1MainViewController : UIViewController<GRY1BreedViewControllerDelegate, GRY1HistoryViewControllerDelegate>
 {
-    GRY1BreedViewController *breedController;
+    
     IBOutlet UIButton *btnBreed;
+    IBOutlet UIButton *btnHistory;
+ 
+    GRY1BreedViewController *breedController;
+    GRY1HistoryViewController *historyController;
     
     GRY1Baby * _myBaby;
 }
 -(IBAction) onBtnBreedClick:(id)sender;
+-(IBAction) onBtnHistoryClick:(id)sender;
+
 @end
